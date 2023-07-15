@@ -1,7 +1,16 @@
+using BookRepository.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add Database Context
+builder.Services.AddDbContext<DataContext>(options => options.UseMySql(
+    builder.Configuration.GetConnectionString("MariaDB"),
+    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("MariaDB"))
+));
 
 var app = builder.Build();
 
