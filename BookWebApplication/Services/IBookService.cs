@@ -6,5 +6,7 @@ namespace BookWebApplication.Services
     {
         Task<List<CurrentBook>> GetCurrentBooksAsync();
         Task<List<ArchivedBook>> GetArchivedBooksAsync();
+        Task MoveBookToArchiveAsync(int bookId);
+        Task MoveBookToCurrentAsync(int bookId);
     }
 }

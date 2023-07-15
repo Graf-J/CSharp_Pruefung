@@ -30,14 +30,22 @@ namespace BookWebApplication.Controllers
         }
 
         [HttpPost]
-        public IActionResult MoveBookToArchive(int bookId)
+        public async Task<IActionResult> MoveBookToArchive(int bookId)
         {
+            // Move the books from Current to Archive
+            await _bookService.MoveBookToArchiveAsync(bookId);
+
+            // Redirect back to the Index Page
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public IActionResult MoveBookToCurrent(int bookId) 
+        public async Task<IActionResult> MoveBookToCurrent(int bookId) 
         {
+            // Move the books from Archive to Current
+            await _bookService.MoveBookToCurrentAsync(bookId);
+
+            // Redirect back to the Index Page
             return RedirectToAction("Index");
         }
     }
