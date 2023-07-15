@@ -1,5 +1,6 @@
 ﻿using BookRepository.Data;
 using BookWebApplication.Models;
+using BookWebApplication.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,14 +8,14 @@ namespace BookWebApplication.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly DataContext _context;
+        private readonly IBookService _bookService;
 
-        public HomeController(DataContext context)
+        public HomeController(IBookService bookService)
         {
-            _context = context;
+            _bookService = bookService;
         }
 
-        public IActionResult Index()
+        async public Task<IActionResult> Index()
         {
             return View();
         }

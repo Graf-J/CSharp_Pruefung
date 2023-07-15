@@ -1,4 +1,5 @@
 using BookRepository.Data;
+using BookWebApplication.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,9 @@ builder.Services.AddDbContext<DataContext>(options => options.UseMySql(
     builder.Configuration.GetConnectionString("MariaDB"),
     ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("MariaDB"))
 ));
+
+// Add Book Service
+builder.Services.AddTransient<IBookService, BookService>();
 
 var app = builder.Build();
 
