@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookRepository.Models
 {
-    public class Book
+    public class ArchivedBook
     {
         [Key]
         public int Id { get; set; }

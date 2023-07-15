@@ -1,7 +1,55 @@
-﻿
+﻿@model ViewBookModel
 @{
     ViewData["Title"] = "Books";
 }
 
-<h1>Index Books</h1>
+<h2>Two Tables Next to Each Other</h2>
+
+<div style="display: flex;">
+    <table class="table table-bordered table-striped" width="50%" style="margin-right: 10%">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var book in Model.CurrentBooks)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Titel</td>
+                <td>@book.Autor</td>
+                <td>
+                    <form asp-controller="Book" asp-action="MoveBookToArchive" method="post">
+                        <input type="hidden" name="bookId" value="@book.Id"/>
+                        <button class="btn btn-primary">Switch</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+
+    <table class="table table-bordered table-striped" width="50%">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var book in Model.ArchivedBooks)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Titel</td>
+                <td>@book.Autor</td>
+                <td>
+                    <form asp-controller="Book" asp-action="MoveBookToCurrent">
+                        <input type="hidden" name="bookId" value="@book.Id"/>
+                        <button class="btn btn-primary">Switch</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
 

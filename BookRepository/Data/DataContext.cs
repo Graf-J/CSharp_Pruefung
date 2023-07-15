@@ -12,21 +12,21 @@ namespace BookRepository.Data
     {
         public DataContext(DbContextOptions options) : base(options) 
         {
-            CurrentBooks = Set<Book>();
-            ArchivedBooks= Set<Book>();
+            CurrentBooks = Set<CurrentBook>();
+            ArchivedBooks= Set<ArchivedBook>();
         }
 
         // Define DbSets which represent Tables in the MariaDB
-        public DbSet<Book> CurrentBooks { get; set; }
-        public DbSet<Book> ArchivedBooks { get; set; }
+        public DbSet<CurrentBook> CurrentBooks { get; set; }
+        public DbSet<ArchivedBook> ArchivedBooks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             // Use the Fluent API to specify the table names for the "CurrentBooks" and "ArchivedBooks" entities
-            modelBuilder.Entity<Book>().ToTable("aktuelle_buecher");
-            modelBuilder.Entity<Book>().ToTable("archivierte_buecher");
+            modelBuilder.Entity<CurrentBook>().ToTable("aktuelle_buecher");
+            modelBuilder.Entity<ArchivedBook>().ToTable("archivierte_buecher");
         }
     }
 }

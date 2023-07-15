@@ -13,7 +13,7 @@ namespace BookWebApplication.Services
             _context= context;
         }
 
-        public async Task<List<Book>> GetCurrentBooks()
+        public async Task<List<CurrentBook>> GetCurrentBooksAsync()
         {
             var currentBooks = await _context.CurrentBooks.ToListAsync();
 
@@ -21,7 +21,7 @@ namespace BookWebApplication.Services
         }
 
 
-        public async Task<List<Book>> GetArchivedBooks()
+        public async Task<List<ArchivedBook>> GetArchivedBooksAsync()
         {
             var archivedBooks = await _context.ArchivedBooks.ToListAsync();
 

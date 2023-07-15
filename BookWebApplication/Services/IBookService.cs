@@ -4,7 +4,7 @@ namespace BookWebApplication.Services
 {
     public interface IBookService
     {
-        Task<List<Book>> GetCurrentBooks();
-        Task<List<Book>> GetArchivedBooks();
+        Task<List<CurrentBook>> GetCurrentBooksAsync();
+        Task<List<ArchivedBook>> GetArchivedBooksAsync();
     }
 }
