@@ -24,7 +24,7 @@ namespace BookRepository.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Use the Fluent API to specify the table names for the "CurrentBooks" and "ArchivedBooks" entities
+            // Use the Fluent API to specify the table names for the CurrentBooks and ArchivedBooks entities
             modelBuilder.Entity<CurrentBook>().ToTable("aktuelle_buecher");
             modelBuilder.Entity<ArchivedBook>().ToTable("archivierte_buecher");
         }

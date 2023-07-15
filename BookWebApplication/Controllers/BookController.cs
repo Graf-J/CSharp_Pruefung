@@ -26,6 +26,7 @@ namespace BookWebApplication.Controllers
                 ArchivedBooks = archivedBooks
             };
 
+            // Return the Website to the Client
             return View(model);
         }
 
