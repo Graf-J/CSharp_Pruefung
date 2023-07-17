@@ -2,7 +2,7 @@
 using BookRepository.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookWebApplication.Services
+namespace BookRepository.Services
 {
     /// <summary>
     /// Service class for handling book-related operations.

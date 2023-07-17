@@ -1,6 +1,6 @@
 ﻿using BookRepository.Models;
 
-namespace BookWebApplication.Services
+namespace BookRepository.Services
 {
     public interface IBookService
     {
