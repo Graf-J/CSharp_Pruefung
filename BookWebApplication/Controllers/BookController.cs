@@ -1,7 +1,6 @@
 ﻿using BookWebApplication.Models;
 using BookRepository.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace BookWebApplication.Controllers
 {
