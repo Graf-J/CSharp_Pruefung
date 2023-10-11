@@ -1,6 +1,4 @@
-using BookRepository.Data;
 using BookRepository;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
